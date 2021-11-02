@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <canvas id="c"></canvas>
+
+    <script type="module">
+        import * as THREE from './resources/threejs/r132/build/three.module.js';
+
+
+        function main() {
+            const canvas = document.querySelector('#c');
+            const renderer = new THREE.WebGLRenderer({canvas});
+        }
+
+        //  fov = field of view
+        // 
+        const fov = 75;
+        const aspect = 2;
+        const near = 0.1;
+        const far = 5;
+        
+        const camera = new THREE.PerspectiveCamera(fov, aspect, near, far);
+
+
+        // Making a screen 
+        const boxWidth = 1;
+        const boxHeight =1;
+        const boxDepth = 1;
+        const geometry = new THREE.BoxGeometry(boxWidth, boxHeight, boxDepth);
+        // We then create a basic material and set its color. Colors can be specified using standard CSS style 6 digit hex color values.
+
+        const material = new THREE.MeshBasicMaterial({color: 0x44aa88});
+        // A Mesh in three represents the combination of a three things, geometry and material combination.
+        
+
+
+    </script>
+
+</body>
+
+</html>
